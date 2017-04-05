@@ -1,13 +1,21 @@
 package com.zms.xutils3demo;
 
-import android.app.Activity;
-import android.os.Bundle;
+import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.ViewInject;
 
-public class MainActivity extends Activity {
+import android.os.Bundle;
+import android.widget.TextView;
+
+@ContentView(R.layout.activity_main)
+public class MainActivity extends BaseActivity {
+
+	@ViewInject(R.id.textTest)
+	private TextView textTest;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		textTest.setText(this.getClass().getName());
 	}
+
 }
